@@ -1,9 +1,7 @@
 # Tucil1-13524063 Queens "Queens Solver"
 
-```markdown
 A Java-based application to solve the classic **N-Queens problem**, featuring both brute-force and optimized algorithms.  
 This project includes a **JavaFX GUI** for visualization and JUnit tests for validation.
-```
 
 ---
 
