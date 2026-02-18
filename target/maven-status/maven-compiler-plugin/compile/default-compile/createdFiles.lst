@@ -1,0 +1,6 @@
+com\queens\entities\Coordinate.class
+com\queens\entities\Board.class
+com\queens\entities\Area.class
+com\queens\solver\Optimized.class
+com\queens\app\Main.class
+com\queens\solver\Bruteforce.class
