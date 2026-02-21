@@ -32,12 +32,13 @@ public class Bruteforce {
         if (index == board.getAreas().size()){
             // this.combination.add(pointCombination);
             this.iteration++;
+            board.resetQueens();
+            board.resetAreas();
+            board.generateArea();
             for (Coordinate cord : pointCombination){
                 board.addQueen(cord.getCoordinate()[0], cord.getCoordinate()[1]);
             }
 
-            board.resetAreas();
-            board.generateArea();
             boolean isEverOverwriteQueen = board.setEliminationFromQueens();
 
             if (!isEverOverwriteQueen){
@@ -50,7 +51,7 @@ public class Bruteforce {
             for (int ar = 0; ar < board.getAreas().get(index).getCoordinates().size(); ar++){
                 pointCombination.add(board.getAreas().get(index).getCoordinates().get(ar));
                 bruteforceQueenPos (board, index + 1, pointCombination, maxIter);
-                pointCombination.remove(pointCombination.size());
+                pointCombination.remove(pointCombination.size() - 1);
             }
         }
 

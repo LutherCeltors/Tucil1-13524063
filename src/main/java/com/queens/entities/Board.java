@@ -168,21 +168,57 @@ public class Board {
         int[] diagonalElt4 = {xInd + 1, yInd - 1};
 
         if (diagonalElt1[0] >= 0 && diagonalElt1[1] < this.order){
-            setAreaCoordinateType("blocked", diagonalElt1[0], diagonalElt1[1]);
+            for (Area a : this.areas){
+                for (Coordinate c : a.getCoordinates()){
+                    if (c.getCoordinate()[0] == diagonalElt1[0] && c.getCoordinate()[1] == diagonalElt1[1]){
+                        if (c.getType().equals("Queen")){
+                            everEliminateQueen = true;
+                        }
+                        c.setType("blocked");
+                    }
+                }
+            }
         }
 
         if (diagonalElt2[0] < this.order && diagonalElt2[1] < this.order){
-            setAreaCoordinateType("blocked", diagonalElt2[0], diagonalElt2[1]);
+            for (Area a : this.areas){
+                for (Coordinate c : a.getCoordinates()){
+                    if (c.getCoordinate()[0] == diagonalElt2[0] && c.getCoordinate()[1] == diagonalElt2[1]){
+                        if (c.getType().equals("Queen")){
+                            everEliminateQueen = true;
+                        }
+                        c.setType("blocked");
+                    }
+                }
+            }
         }
 
 
         if (diagonalElt3[0] >= 0 && diagonalElt3[1] >= 0){
-            setAreaCoordinateType("blocked", diagonalElt3[0], diagonalElt3[1]);
+            for (Area a : this.areas){
+                for (Coordinate c : a.getCoordinates()){
+                    if (c.getCoordinate()[0] == diagonalElt3[0] && c.getCoordinate()[1] == diagonalElt3[1]){
+                        if (c.getType().equals("Queen")){
+                            everEliminateQueen = true;
+                        }
+                        c.setType("blocked");
+                    }
+                }
+            }
         }
 
 
         if (diagonalElt4[0] >= 0 && diagonalElt4[1] < this.order){
-            setAreaCoordinateType("blocked", diagonalElt4[0], diagonalElt4[1]);
+            for (Area a : this.areas){
+                for (Coordinate c : a.getCoordinates()){
+                    if (c.getCoordinate()[0] == diagonalElt4[0] && c.getCoordinate()[1] == diagonalElt4[1]){
+                        if (c.getType().equals("Queen")){
+                            everEliminateQueen = true;
+                        }
+                        c.setType("blocked");
+                    }
+                }
+            }
         }
         return everEliminateQueen;
         
